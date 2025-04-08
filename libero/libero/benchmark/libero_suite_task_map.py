@@ -139,4 +139,16 @@ libero_task_map = {
         "STUDY_SCENE4_pick_up_the_book_on_the_right_and_place_it_on_the_cabinet_shelf",
         "STUDY_SCENE4_pick_up_the_book_on_the_right_and_place_it_under_the_cabinet_shelf",
     ],
+    "iris_user_study_xr": [
+        "KITCHEN_SCENE6_close_the_microwave",
+        "KITCHEN_SCENE8_turn_off_the_stove",
+        "STUDY_SCENE4_pick_up_the_book_in_the_middle_and_place_it_on_the_cabinet_shelf",
+        "KITCHEN_SCENE9_turn_on_the_stove_and_put_the_frying_pan_on_it",
+    ],
+    "iris_user_study_original": [
+        "KITCHEN_SCENE6_close_the_microwave",
+        "KITCHEN_SCENE8_turn_off_the_stove",
+        "STUDY_SCENE4_pick_up_the_book_in_the_middle_and_place_it_on_the_cabinet_shelf",
+        "KITCHEN_SCENE9_turn_on_the_stove_and_put_the_frying_pan_on_it",
+    ]
 }

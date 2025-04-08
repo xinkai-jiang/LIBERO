@@ -9,7 +9,7 @@ defaults:
   - lifelong: base
   - test: null
 
-seed: 10000
+seed: 32
 use_wandb: false
 wandb_project: "lifelong learning"
 folder: null # use default path
@@ -21,4 +21,4 @@ task_embedding_format: "bert"
 task_embedding_one_hot_offset: 1
 pretrain: false
 pretrain_model_path: ""
-benchmark_name: "LIBERO_SPATIAL"
+benchmark_name: "iris_user_study_original"

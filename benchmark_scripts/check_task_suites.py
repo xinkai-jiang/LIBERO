@@ -55,6 +55,8 @@ def main():
         "libero_spatial",
         "libero_10",
         "libero_90",
+        "iris_user_study_xr",
+        "iris_user_study_original",
     ]:
         benchmark_instance = benchmark.get_benchmark_dict()[benchmark_name]()
         num_tasks = benchmark_instance.get_num_tasks()

@@ -9,6 +9,7 @@ import torch
 import torch.multiprocessing as mp
 import torch.nn.functional as F
 from torch.utils.data import DataLoader
+import multiprocessing
 
 from libero.libero.envs import OffScreenRenderEnv, SubprocVectorEnv, DummyVectorEnv
 from libero.libero.utils.time_utils import Timer
@@ -58,6 +59,8 @@ def evaluate_one_task_success(
                 evaluation, mainly for visualization and debugging purpose
     task_str:   the key to access sim_states dictionary
     """
+    if multiprocessing.get_start_method(allow_none=True) != "spawn":  
+        multiprocessing.set_start_method("spawn", force=True)
     with Timer() as t:
         if cfg.lifelong.algo == "PackNet":  # need preprocess weights for PackNet
             algo = algo.get_eval_algo(task_id)

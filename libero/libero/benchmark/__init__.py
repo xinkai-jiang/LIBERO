@@ -59,6 +59,8 @@ libero_suites = [
     "libero_goal",
     "libero_90",
     "libero_10",
+    "iris_user_study_xr",
+    "iris_user_study_original",
 ]
 task_maps = {}
 max_len = 0
@@ -115,6 +117,10 @@ class Benchmark(abc.ABC):
     def _make_benchmark(self):
         tasks = list(task_maps[self.name].values())
         if self.name == "libero_90":
+            self.tasks = tasks
+        elif self.name == "iris_user_study_xr":
+            self.tasks = tasks
+        elif self.name == "iris_user_study_original":
             self.tasks = tasks
         else:
             print(f"[info] using task orders {task_orders[self.task_order_index]}")
@@ -200,6 +206,26 @@ class LIBERO_90(Benchmark):
             task_order_index == 0
         ), "[error] currently only support task order for 10-task suites"
         self.name = "libero_90"
+        self._make_benchmark()
+
+@register_benchmark
+class IRIS_USER_STUDY_XR(Benchmark):
+    def __init__(self, task_order_index=0):
+        super().__init__(task_order_index=task_order_index)
+        assert (
+            task_order_index == 0
+        ), "[error] currently only support task order for 10-task suites"
+        self.name = "iris_user_study_xr"
+        self._make_benchmark()
+
+@register_benchmark
+class IRIS_USER_STUDY_ORIGINAL(Benchmark):
+    def __init__(self, task_order_index=0):
+        super().__init__(task_order_index=task_order_index)
+        assert (
+            task_order_index == 0
+        ), "[error] currently only support task order for 10-task suites"
+        self.name = "iris_user_study_original"
         self._make_benchmark()
 
 
